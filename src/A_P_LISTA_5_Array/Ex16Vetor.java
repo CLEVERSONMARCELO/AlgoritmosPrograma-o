@@ -13,7 +13,7 @@ public class Ex16Vetor {
 
     static void vetificaImprime(int[] pVetor) {
 
-        Arrays.sort(pVetor);
+        //Arrays.sort(pVetor); //ordena o vetor em ordem crescentes
         
         for (int i = 0; i < pVetor.length; i++) {
             
