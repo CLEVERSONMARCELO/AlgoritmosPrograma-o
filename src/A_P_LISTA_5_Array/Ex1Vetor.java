@@ -32,7 +32,7 @@ public class Ex1Vetor {
 
         for (int i = 0; i < vetor.length; i++) {
             
-            System.out.printf("Posição %d recebe: ",i);
+            System.out.printf("Posição %d recebe: ",(i+1));
             vetor[i] = leitor.nextInt();
         }
         return vetor;
