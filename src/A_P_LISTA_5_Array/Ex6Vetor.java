@@ -16,7 +16,7 @@ public class Ex6Vetor {
     }
 
     static int leitor() {
-        System.out.print("Tamnho do vetor: ");
+        System.out.print("Tamanho do vetor: ");
         int t = leitor.nextInt();
         System.out.println("");
         return t;
@@ -40,9 +40,13 @@ public class Ex6Vetor {
 
     static void imprime(int[] populado) {
 
-        for (int i = 0; i < populado.length; i++) {
-            System.out.printf("Posição %d do vetor possui o produto: %d", (i + 1), populado[i]);
+            int produto = 1;
+
+            for (int i = 0; i < populado.length; i++) {
+
+                produto *= populado[i];
+            }
+            System.out.printf("O produto dos elementos do vetor é: %d", produto);
             System.out.println("");
         }
-    }
-}
+    }//class
