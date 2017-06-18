@@ -7,13 +7,14 @@ public class Ex21Vetor {
     public static Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int totalAlunos = Ex9Vetor.leitor("Quantidade de alunos: ");
+        int totalAlunos = Ex1Vetor.leitorInteiro("Quantidade de alunos: ");
         String[] nomes = criaVnomes(totalAlunos);
         double[] notas = criaVnotas(totalAlunos);
         ImprimeMediaAlunos(nomes, notas);
     }
 
     static String[] criaVnomes(int totalAlunos) {
+        System.out.println(" ");
 
         String[] nomes = new String[totalAlunos];
 
@@ -36,7 +37,7 @@ public class Ex21Vetor {
 
             System.out.printf("Nome do %dº aluno: ", (i + 1));
             nomes[i] = leitor.nextLine();
-            nomes[i] = nomes[i].toUpperCase();
+            nomes[i] = nomes[i].toUpperCase();// nome maiusculo
 
             System.out.print("Nota: ");
             notas[i] = Double.parseDouble(leitor.nextLine());

@@ -38,7 +38,7 @@ public class Ex_28Matriz {
                 //percorre a matriz e guarda a soma de cada linha na variável soma
                 soma += popula[linha][coluna];
             }
-            System.out.printf("A soma dos elementos da linha %d é %d", linha, soma);
+            System.out.printf("A soma dos elementos da linha %d é: %d", linha, soma);
             System.out.println("");
         }
     }

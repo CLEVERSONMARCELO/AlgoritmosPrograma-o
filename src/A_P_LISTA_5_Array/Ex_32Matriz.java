@@ -10,7 +10,6 @@ public class Ex_32Matriz {
         int[][] c = Ex_22Matriz.criaMatriz(linha, coluna);
         int[][] p = popula(c);
         matriz(p);
-
     }
 
     static int[][] popula(int[][] matriz) {
@@ -28,7 +27,7 @@ public class Ex_32Matriz {
     }
 
     static void matriz(int[][] popula) {
-        int soma =0;
+        int soma = 0;
         
         for (int linha = 0; linha < popula.length; linha++) {
 

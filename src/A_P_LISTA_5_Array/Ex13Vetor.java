@@ -1,21 +1,19 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Scanner;
-
 public class Ex13Vetor {
 
-    public static Scanner leitor = new Scanner(System.in);
-
     public static void main(String[] args) {
-
-        int t = Ex11Vetor.tamanho("Tamanho dos vetores A e B: ");
-        int[] vetorA = Ex9Vetor.cria(t);
-        int[] vetorB = Ex9Vetor.cria(t);
-        int[] pVetorA = Ex9Vetor.popula1(vetorA);
-        int[] pVetorB = Ex9Vetor.popula2(vetorB);
-        int[] vetorC = vetorC(pVetorA, pVetorB);
-        int[] populadoC = populaC(vetorC, pVetorA, pVetorB);
-        imprime(populadoC);
+        
+        int tamanho  = Ex1Vetor.leitorInteiro("Tamanho do vetor A e B: ");
+        int [] criaVetorA = Ex1Vetor.criaVetor(tamanho);
+        int [] criaVetorB = Ex1Vetor.criaVetor(tamanho);
+        System.out.println("--- Vetor A ---");
+        int [] populaA = Ex1Vetor.populaVetor(criaVetorA);
+        System.out.println("--- Vetor B ---");
+        int [] populaB = Ex1Vetor.populaVetor(criaVetorB);
+        int [] vetorC = vetorC(criaVetorA, criaVetorB);
+        int [] populaVetorC = populaC(vetorC, populaA, populaB);
+        imprimeVetorC(populaVetorC);
     }
 
     static int[] vetorC(int[] vetorA, int[] vetorB) {
@@ -32,8 +30,8 @@ public class Ex13Vetor {
             if (i < vetorA.length) {
 
                 vetorC[i] = vetorA[i];
-
-            } else if (i >= vetorA.length) {
+                
+            } else if (i >= vetorB.length) {
 
                 vetorC[i] = vetorB[i - vetorA.length];
             }
@@ -41,11 +39,12 @@ public class Ex13Vetor {
         return vetorC;
     }
 
-    static void imprime(int[] vetorC) {
+    static void imprimeVetorC(int[] vetorC) {
+        System.out.println("---- Vetor C ----");
 
         for (int i = 0; i < vetorC.length; i++) {
 
-            System.out.printf("Posição %d do vetor C contém: %d ", (i + 1), vetorC[i]);
+            System.out.printf("Posição %d contém: %d ", (i + 1), vetorC[i]);
             System.out.println("");
         }
     }

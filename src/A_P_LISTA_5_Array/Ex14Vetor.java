@@ -7,11 +7,13 @@ public static Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        int t = Ex11Vetor.tamanho("Tamanho dos vetores A e B: ");
+        int t = Ex1Vetor.leitorInteiro("Tamanho dos vetores A e B: ");
         int[] vetorA = Ex9Vetor.cria(t);
         int[] vetorB = Ex9Vetor.cria(t);
-        int[] pVetorA = Ex9Vetor.popula1(vetorA);
-        int[] pVetorB = Ex9Vetor.popula2(vetorB);
+        System.out.println("---- Vetor A ----");
+        int[] pVetorA = Ex1Vetor.populaVetor(vetorA);
+        System.out.println("---- Vetor B ----");
+        int[] pVetorB = Ex1Vetor.populaVetor(vetorB);
         int[] vetorC = vetorC(pVetorA, pVetorB);
         int[] populadoC = populaC(vetorC, pVetorA, pVetorB);
         imprime(populadoC);
@@ -27,12 +29,14 @@ public static Scanner leitor = new Scanner(System.in);
     static int[] populaC(int[] vetorC, int[] vetorA, int[] vetorB) {
         
         int cont = 0;
+        
         for (int i = 0; i < vetorC.length; i += 2) {
             
             vetorC [i] = vetorA[cont];
             cont++;
         }
         cont = 0;
+        
         for (int i = 1; i < vetorC.length; i +=2) {
             
             vetorC [i] = vetorB[cont];

@@ -1,27 +1,13 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Scanner;
-
 public class Ex5Vetor {
-
-    public static Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
         
-        int t = leitor();
+        int t = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
         int [] cria = cria(t);
-        int m = media(cria);
+        double m = media(cria);
         imprimeMedia(m);
-        
-        
-    }
-
-    static int leitor() {
-
-        System.out.print("Tamanho do vetor: ");
-        int tamanho = leitor.nextInt();
-        System.out.println("");
-        return tamanho;
     }
 
     static int[] cria(int tamanho) {
@@ -30,23 +16,25 @@ public class Ex5Vetor {
         return vetor;
     }
 
-    static int media(int[] vetor) {
+    static double media(int[] vetor) {
+        System.out.println("");
 
-        int soma = 0, media;
+        double soma = 0, media;
 
         for (int i = 0; i < vetor.length; i++) {
 
-            System.out.printf("Posição %d do vetor recebe: ", i);
-            vetor[i] = leitor.nextInt();
+            System.out.printf("Posição %d do vetor recebe: ", (i+1));
+            vetor[i] = Ex1Vetor.leitor2SemMsg();
 
             soma += vetor[i];
         }
         media = soma / vetor.length;
+        
         return media;
     }
 
-    static void imprimeMedia(int media) {
-
-        System.out.println("A média dos elementos do vetor é: " + media);
+    static void imprimeMedia(double media) {
+        System.out.println(" ");
+        System.out.printf("A média dos elementos do vetor é: %.2f ", media);
     }
 }

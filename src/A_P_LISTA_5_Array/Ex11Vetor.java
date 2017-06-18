@@ -1,25 +1,14 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Scanner;
-
 public class Ex11Vetor {
-
-    public static Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        int t = tamanho("Tamanho do vetor: ");
+        int t = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
         double[] vetor = cria(t);
         double[] popula = popula(vetor);
         double verifMedia = verificaMedia(vetor);
         imprime(popula, verifMedia);
-    }
-
-    static int tamanho(String msg) {
-        System.out.print(msg);
-        int t = leitor.nextInt();
-        System.out.println("");
-        return t;
     }
 
     static double[] cria(int tamanho) {
@@ -32,7 +21,7 @@ public class Ex11Vetor {
         for (int i = 0; i < vetor.length; i++) {
 
             System.out.printf("Posição %d do vetor recebe: ", (i + 1));
-            vetor[i] = leitor.nextDouble();
+            vetor[i] = Ex2Vetor.leitor2double();
         }
         return vetor;
     }
@@ -43,7 +32,7 @@ public class Ex11Vetor {
 
         for (int i = 0; i < vetor.length; i++) {
 
-            if ((vetor[i] % 2) == 0) {
+            if ((i % 2) == 0) {
 
                 cont++;
                 soma += vetor[i];

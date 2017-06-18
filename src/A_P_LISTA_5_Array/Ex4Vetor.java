@@ -1,52 +1,48 @@
 package A_P_LISTA_5_Array;
 
-
-import java.util.Scanner;
-
-
 public class Ex4Vetor {
-
-    public static Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
 
     int t = leitor();
-    int [] c = criaVetor(t);
-    int pV = populaVerifica(c);
+    double [] c = criaVetor(t);
+    double pV = populaVerifica(c);
         imprimeMaior(pV);
         
     }
 
     static int leitor() {
-        System.out.print("Tamanho do vetor: ");
-        int tamanho = leitor.nextInt();
+        int tamanho = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
         System.out.println("");
         return tamanho;
     }
 
-    static int[] criaVetor(int tamanho) {
+    static double [] criaVetor (int tamanho) {
 
-        int[] vetor = new int[tamanho];
+        double [] vetor = new double [tamanho];
+        
         return vetor;
     }
 
-    static int populaVerifica(int[] vetor) {
-
-        int menor = 100;
+    static double populaVerifica(double[] vetor) {
 
         for (int i = 0; i < vetor.length; i++) {
+            System.out.printf("Posição %d do vetor recebe: ", i);
+            vetor[i] = Ex2Vetor.leitor2double();
+        }
 
-            System.out.printf("Posição %d do vetor recebe: ",i);
-            vetor[i] =  leitor.nextInt();
-            
-            if (vetor[i] < menor) {
-                menor = vetor[i];
+        double menor = vetor[0];
+
+        for (double i : vetor) {
+
+            if (i < menor) {
+                menor = i;
             }
         }
         return menor;
     }
 
-    static void imprimeMaior(int maior) {
-        System.out.println("O maior elemento do vetor é: " + maior);
+    static void imprimeMaior(double menor) {
+        System.out.println("O menor elemento do vetor é: " + menor);
     }
 }    

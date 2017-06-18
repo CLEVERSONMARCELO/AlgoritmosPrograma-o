@@ -9,7 +9,7 @@ public class Ex_31Matriz {
         int coluna = leitor("Número de colunas: ");
         int[][] c = Ex_22Matriz.criaMatriz(linha, coluna);
         int[][] p = popula(c);
-        matriz(p);
+        matriz(p, linha, coluna);
 
     }
 
@@ -27,13 +27,13 @@ public class Ex_31Matriz {
         return matriz;
     }
 
-    static void matriz(int[][] popula) {
+    static void matriz(int[][] popula, int linh, int colu) {
 
-        for (int linha = 0; linha < popula.length; linha++) {
+        for (int linha = 0; linha < linh; linha++) {
 
             int soma = 0;//soma será zerada a cada linha trocada
 
-            for (int coluna = 0; coluna < popula[linha].length; coluna++) {
+            for (int coluna = 0; coluna < colu; coluna++) {
 
                 //percorre a matriz e guarda a soma de cada coluna na variável soma
                 soma += popula[coluna][linha];

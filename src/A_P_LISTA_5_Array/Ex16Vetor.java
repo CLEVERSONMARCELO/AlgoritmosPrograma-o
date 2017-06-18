@@ -1,13 +1,12 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Arrays;
 public class Ex16Vetor {
 
     public static void main(String[] args) {
 
-        int t = Ex9Vetor.leitor("Tamanho do vetor: ");
-        int[] criaVetor = Ex9Vetor.cria(t);
-        int[] pVetor = Ex8Vetor.popula(criaVetor);
+        int t = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
+        int[] criaVetor = Ex1Vetor.criaVetor(t);
+        int[] pVetor = Ex1Vetor.populaVetor(criaVetor);
         vetificaImprime(pVetor);
     }
 

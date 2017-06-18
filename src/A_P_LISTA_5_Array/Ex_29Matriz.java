@@ -35,7 +35,6 @@ public class Ex_29Matriz {
             for (int coluna = 0; coluna < matriz[linha].length; coluna++) {
 
                 matriz[linha][coluna] = vetor[linha];
-
             }
         }
         return matriz;

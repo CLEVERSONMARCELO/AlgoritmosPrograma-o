@@ -1,27 +1,16 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Scanner;
-
 public class Ex7Vetor {
-    public static Scanner leitor  =new Scanner(System.in);
     
     public static void main(String[] args) {
     
-        System.out.print("Tamanho do vetor: ");
-        int t = leitor();
-        System.out.print("Multiplicar elementos do vetor por: ");
-        int multiplicação = leitor();
+        int t = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
+        int multiplicação = Ex1Vetor.leitorInteiro("Multiplicar cada elementos do vetor por: ");
         int [] vetor = cria(t);
         int v = populaMultiplica(multiplicação, vetor);
         imprime(multiplicação, v);
     }
 
-    static int leitor (){
-        int t = leitor.nextInt();
-        System.out.println("");
-        return t;
-    }
-    
     static int [] cria (int t){
         
         int [] vetor = new int [t];
@@ -29,15 +18,16 @@ public class Ex7Vetor {
     }
     
     static int populaMultiplica (int mult,int [] vetor){
+        System.out.println("");
         
         int soma = 0;
         
         for(int i = 0; i < vetor.length; i++){
             
-            System.out.printf("Posição %d do vetor recebe: ",i);
-            vetor [i] = leitor.nextInt();
+            System.out.printf("Posição %d do vetor recebe: ",(i+1));
+            vetor [i] = Ex1Vetor.leitor2SemMsg();
             
-            soma+=vetor[i];
+            soma+= vetor[i];
         }
         
         int multiP = soma *mult;
@@ -47,7 +37,7 @@ public class Ex7Vetor {
  
     static void imprime (int multiplica,int multiP){
         System.out.println("");
-        System.out.printf("A multipliacação dos elementos do vetor por %d é: %d ",multiplica, multiP);
+        System.out.printf("A multipliacação de cada elemento do vetor por %d é: %d ",multiplica, multiP);
         
     }
 }

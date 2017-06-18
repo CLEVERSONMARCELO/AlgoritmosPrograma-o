@@ -8,17 +8,49 @@ public class Ex1Vetor {
 
     public static void main(String[] args) {
 
-        int tamanho = leitor("Tamanho do Vetor: ");
+        int tamanho = leitorInteiro("Tamanho do Vetor: ");
         int[] cria = criaVetor(tamanho);
         int[] vetorPopulado = populaVetor(cria);
         imprimeVetor(vetorPopulado);
     }
 
-    static int leitor(String msg) {
-
-        System.out.print(msg);
-        int numero = leitor.nextInt();
-        return numero;
+   static int leitorInteiro(String msg) {
+        boolean caracter = false, menorZero = false;
+        int tamanho = 0;
+        do {
+            try {
+                do{
+                System.out.print(msg);
+                tamanho = Integer.parseInt(leitor.nextLine());
+                if (tamanho > 0){
+                    menorZero = true;
+                }else {
+                    System.err.println("Digite um número maior que zero!");
+                }
+                }while (!menorZero);
+                caracter = true;
+            } catch (NumberFormatException ex) {
+                System.err.println("-----------------Entrada inválida-----------------"
+                        + " \n                 tente novamente!");
+            }
+        } while (!caracter);
+        return tamanho;
+    }
+   
+    static int leitor2SemMsg() {
+        boolean caracter = false;
+        int entrada = 0;
+        do {
+            try {
+                entrada = Integer.parseInt(leitor.nextLine());
+                caracter = true;
+            } catch (NumberFormatException ex) {
+                System.err.println("-----------------Entrada inválida-----------------"
+                        + " \n                 tente novamente!");
+            }
+        } while (!caracter);
+        
+        return entrada;
     }
 
     static int[] criaVetor(int leitor) {
@@ -33,7 +65,7 @@ public class Ex1Vetor {
         for (int i = 0; i < vetor.length; i++) {
 
             System.out.printf("Posição %d recebe: ", (i + 1));
-            vetor[i] = leitor.nextInt();
+            vetor[i] = leitor2SemMsg();
         }
         return vetor;
     }

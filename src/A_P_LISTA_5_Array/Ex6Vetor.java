@@ -1,38 +1,26 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Scanner;
-
 public class Ex6Vetor {
-
-    public static Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        int t = leitor();
+        int t = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
         int[] v = cria(t);
         int [] p = popula(v);
         imprime(p);
         
     }
-
-    static int leitor() {
-        System.out.print("Tamanho do vetor: ");
-        int t = leitor.nextInt();
-        System.out.println("");
-        return t;
-    }
-
     static int[] cria(int t) {
         int[] vetor = new int[t];
         return vetor;
     }
 
     static int[] popula(int[] vetor) {
-
+        System.out.println("");
         for (int i = 0; i < vetor.length; i++) {
 
-            System.out.printf("Posição %d do vetor recebe: ",i);
-            vetor[i] = leitor.nextInt();
+            System.out.printf("Posição %d do vetor recebe: ",(i+1));
+            vetor[i] = Ex1Vetor.leitor2SemMsg();
         }
         System.out.println(" ");
         return vetor;
@@ -42,9 +30,9 @@ public class Ex6Vetor {
 
             int produto = 1;
 
-            for (int i = 0; i < populado.length; i++) {
+            for (int i : populado) {
 
-                produto *= populado[i];
+                produto *= i;
             }
             System.out.printf("O produto dos elementos do vetor é: %d", produto);
             System.out.println("");

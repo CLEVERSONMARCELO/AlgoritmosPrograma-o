@@ -1,18 +1,15 @@
 package A_P_LISTA_5_Array;
 
-import java.util.Scanner;
-
 public class Ex17Vetor {
-    public static Scanner leitor = new Scanner(System.in);
         
     public static void main(String[] args) {
-   
-    int t = Ex10Vetor.leitor("Tamanho do vetor: ");
-    double numero = Ex10Vetor.nmult("Multiplicar elementos do vetor por: ");
-    double [] vetor = Ex10Vetor.cria(t);
-    double [] popula =  popula(vetor);
+
+        int t = Ex1Vetor.leitorInteiro("Tamanho do vetor: ");
+        System.out.print("Multiplicar cada elementos do vetor por: ");
+        double numero = Ex2Vetor.leitor2double();
+        double[] vetor = Ex10Vetor.cria(t);
+        double[] popula = popula(vetor);
         imprime(popula, numero);
-        
     }
 
     static double[] popula(double[] vetor) {
@@ -20,7 +17,7 @@ public class Ex17Vetor {
         for (int i = 0; i < vetor.length; i++) {
             System.out.println("");
             System.out.printf("Posição %d do vetor recebe: ", i);
-            vetor[i] = leitor.nextDouble();
+            vetor[i] = Ex2Vetor.leitor2double();
         }
         return vetor;
     }

@@ -8,17 +8,17 @@ public class Ex_40Matriz {
     public static void main(String[] args) {
         int linh = leitor("Número de linhas da matriz: ");
         int colu = leitor("Número de colunas: ");
-        int numero = Ex10Vetor.leitor("Número inteiro: ");
+        int numero = Ex1Vetor.leitorInteiro("Número inteiro: ");
         int[][] c = Ex_22Matriz.criaMatriz(linh, colu);
         int[][] p = popula(c);
         Ex_37Matriz.matriz(p);
-        verifica(p, numero);
+        verifica(p, linh, colu, numero);
         
     }
-    static void verifica(int[][] p, int numero) {
+    static void verifica(int[][] p, int linha, int coluna, int numero) {
 
-        for (int i = 0; i < p.length; i++) {
-            for (int j = 0; j < p.length; j++) {
+        for (int i = 0; i < linha; i++) {
+            for (int j = 0; j < coluna; j++) {
 
                 if (p[i][j] == numero) {
                     System.out.printf("Número inteiro %d está na posição:  linha %d coluna %d da matriz",numero ,i, j);

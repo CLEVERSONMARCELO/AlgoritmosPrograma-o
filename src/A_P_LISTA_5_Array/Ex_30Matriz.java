@@ -42,7 +42,4 @@ public class Ex_30Matriz {
        return matriz; 
     }
     
-    
-    
-    
 }
